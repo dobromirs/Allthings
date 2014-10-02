@@ -1,18 +1,28 @@
-package loops;
+package arrays;
 
 import java.util.Scanner;
 
 public class PrintMatrix {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-
-		System.out.println("Enter N: ");
+		
 		int n = input.nextInt();
-		for (int i = 1; i <= n; i++) {
-			for (int j = i; j <= n + i - 1; j++) {
-				System.out.print(j);
-			}
-			System.out.println();
-		}
+        int index = 1;
+        int[][] numbersArray = new int[n][n];
+
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                numbersArray[i][j] = index;
+                index++;
+            }
+        }
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++)
+            {
+                System.out.print(numbersArray[j][i] + " ");
+            }
+
+            System.out.println();
+        }
 	}
 }
